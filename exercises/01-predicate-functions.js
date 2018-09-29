@@ -44,13 +44,31 @@ function isVowel(theChar) {
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
-function isEven() {
-
+function isEven(theNum) {
+    isTheNumInteger = Number.isInteger(theNum)
+    if (isTheNumInteger === false) {
+        return false
+    }
+    else if (theNum % 2 === 0) {
+        return true
+    }
+    else {
+        return false
+    }
 }
 
-function isOdd() {
-
-}
+function isOdd(theNum) {
+    isTheNumInteger = Number.isInteger(theNum)
+    if (isTheNumInteger === false) {
+        return false
+    }
+    else if (theNum % 2 !== 0) {
+        return true
+    }
+    else {
+        return false
+    }
+};
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
 // and returns true or false if the city name is the capital of the state.
