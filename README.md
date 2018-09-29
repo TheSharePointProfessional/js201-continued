@@ -1,5 +1,7 @@
 # JavaScript 201 Continued - More Programming Exercises
 
+[![Build Status](https://travis-ci.org/renterial/js201-continued.svg?branch=master)](https://travis-ci.org/renterial/js201-continued)
+
 This repo contains programming exercises designed for someone who is new to
 programming. The exercises here are a continuation of the exercises found in
 [js201].
