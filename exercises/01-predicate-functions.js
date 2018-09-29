@@ -20,9 +20,17 @@
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
-
-
-
+function isVowel(theChar) {
+    if (theChar.length !== 1) {
+        return false
+    }
+    else if (theChar === "A" || theChar === "a" || theChar === "E" || theChar === "e" || theChar === "I" || theChar === "i" || theChar === "O" || theChar === "o" || theChar === "U" || theChar === "u") {
+        return true
+    }
+    else {
+        return false
+    }
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
 // return true or false if the number is even or odd, respectively.
@@ -36,9 +44,13 @@
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
+function isEven() {
 
+}
 
+function isOdd() {
 
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
 // and returns true or false if the city name is the capital of the state.
@@ -52,3 +64,6 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+function isCapitalCity() {
+
+}
