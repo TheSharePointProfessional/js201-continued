@@ -32,8 +32,12 @@ function findLongestWord(str) {
 // Example:
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
-function nicer() {
-
+function nicer(inputScentence) {
+    var outputScentence = inputScentence.replace(/heck /gi, "")
+    var outputScentence = outputScentence.replace(/darn /gi, "")
+    var outputScentence = outputScentence.replace(/dang /gi, "")
+    var outputScentence = outputScentence.replace(/crappy /gi, "")
+    return outputScentence
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
@@ -43,8 +47,14 @@ function nicer() {
 // Examples:
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
-function capitalizeAll() {
-
+function capitalizeAll(theScentence) {
+    var splitTheString = theScentence.split(" ")
+    function Capitalize(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }
+    var capitalizeEachWord = splitTheString.map(Capitalize)
+    var newScentence = capitalizeEachWord.join(" ")
+    return newScentence
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
