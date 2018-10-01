@@ -66,6 +66,60 @@ function capitalizeAll(theScentence) {
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
-function split() {
-
+function split(theString, aDelimiter) {
+    // validate the format of the given string
+    var replace = aDelimiter
+    var regex = new RegExp(replace, "g")
+    var newString = theString.replace(regex, ",")
+    var garbageArray = newString.match(/,/g)
+    // if delimiter exists in the string, then setup an outter while loop
+    if (garbageArray !== null) {
+        var numberOfCommas = garbageArray.length
+        var arrayToReturn = []
+        var x = 0
+        // copy each word to a stagingArray
+        while (x <= numberOfCommas) {
+            var stagingArray = []
+            var i = 0
+            var indexOfFirstComma = newString.indexOf(",")
+            while (i <= indexOfFirstComma && indexOfFirstComma !== -1) {
+                var char = newString.charAt([i])
+                stagingArray.push(char)
+                i++
+            }
+            if (indexOfFirstComma === -1) {
+                i= 0
+                while (i <= newString.length) {
+                    var char = newString.charAt([i])
+                    stagingArray.push(char)
+                    i++
+                }
+            }
+            // convert the stagingArray into a substring
+            var substring = stagingArray.join("")
+            // remove the trailing comma
+            var substringMinusComma = substring.replace(",", "")
+            // add the substring to an arrayToReturn
+            arrayToReturn.push(substringMinusComma)
+            var replace = substring
+            var regex = new RegExp(replace, "g")
+            newString = newString.replace(regex, "")
+            x++
+        }
+        return arrayToReturn
+    }
+    // if delimiter doesn't exist in theString, convert theString to an arrayToReturn
+    else {
+        var arrayToReturn = []
+        var stagingArray = []
+        i = 0
+        while (i < theString.length) {
+            var char = theString.charAt([i])
+            stagingArray.push(char)
+            i++
+        }
+        var substring = stagingArray.join("")
+        arrayToReturn.push(substring)
+        return arrayToReturn
+    }
 }
